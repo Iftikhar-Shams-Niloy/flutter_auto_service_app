@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auto_service_app/screens/auth_screen.dart';
 import 'package:flutter_auto_service_app/screens/splash_screen.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Auto Service',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.blue)),
-      home: const SplashScreen(),
+      home: const AuthScreen(),
     );
   }
 }
