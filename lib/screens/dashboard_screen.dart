@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auto_service_app/screens/notification_screen.dart';
+import 'package:flutter_auto_service_app/screens/profile_screen.dart';
 import 'home_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -13,8 +15,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const Text("Notification Screen"),
-    const Text("Profile Screen"),
+    const NotificationScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -51,18 +53,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
             BottomNavigationBarItem(
               icon: Image(
                 image: AssetImage("assets/icons/dash_home_inactive_icon.png"),
+                height: 24,
+                width: 24,
               ),
               activeIcon: Image(
                 image: AssetImage("assets/icons/dash_home_active_icon.png"),
+                height: 24,
+                width: 24,
               ),
               label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Image(
                 image: AssetImage("assets/icons/dash_noti_inactive_icon.png"),
+                height: 24,
+                width: 24,
               ),
               activeIcon: Image(
                 image: AssetImage("assets/icons/dash_noti_active_icon.png"),
+                height: 24,
+                width: 24,
               ),
               label: 'Notification',
             ),
@@ -71,10 +81,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 image: AssetImage(
                   "assets/icons/dash_profile_inactive_icon.png",
                 ),
+                height: 24,
+                width: 24,
               ),
               activeIcon: Image(
                 image: AssetImage("assets/icons/dash_profile_active_icon.png"),
+                height: 24,
+                width: 24,
               ),
+
               label: 'Profile',
             ),
           ],

@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String? selectedServiceType;
 
   final List<String> carBrands = [
-    'assets/images/subary.png',
+    'assets/images/subaru.png',
     'assets/images/nissan.png',
     'assets/images/chery.png',
     'assets/images/suzuki.png',
@@ -23,30 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final List<Map<String, dynamic>> popularServices = [
-    {
-      'name': 'AC Repair',
-      'icon': 'assets/icons/ac_icon.png',
-    },
-    {
-      'name': 'Tires',
-      'icon': 'assets/icons/tires_icon.png',
-    },
-    {
-      'name': 'Engine',
-      'icon': 'assets/icons/engine_icon.png',
-    },
-    {
-      'name': 'Electrical',
-      'icon': 'assets/icons/electrical_icon.png',
-    },
-    {
-      'name': 'Battery',
-      'icon': 'assets/icons/battery_icon.png',
-    },
-    {
-      'name': 'Spares',
-      'icon': 'assets/icons/spares_icon.png',
-    },
+    {'name': 'AC Repair', 'icon': 'assets/icons/ac_icon.png'},
+    {'name': 'Tires', 'icon': 'assets/icons/tires_icon.png'},
+    {'name': 'Engine', 'icon': 'assets/icons/engine_icon.png'},
+    {'name': 'Electrical', 'icon': 'assets/icons/electrical_icon.png'},
+    {'name': 'Battery', 'icon': 'assets/icons/battery_icon.png'},
+    {'name': 'Spares', 'icon': 'assets/icons/spares_icon.png'},
   ];
 
   final List<Map<String, dynamic>> topGarages = [
@@ -113,10 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     CircleAvatar(
                       radius: 22,
                       backgroundColor: Colors.grey[300],
-                      child: const Icon(
-                        Icons.person,
-                        color: Colors.grey,
-                      ),
+                      child: const Icon(Icons.person, color: Colors.grey),
                     ),
                   ],
                 ),
@@ -151,10 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(height: 8),
                       const Text(
                         'Emergency repairs, maintenance & more',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white70,
-                        ),
+                        style: TextStyle(fontSize: 14, color: Colors.white70),
                       ),
                       const SizedBox(height: 24),
 
@@ -180,17 +156,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       filled: true,
                                       fillColor: Colors.grey[100],
-                                      contentPadding: const EdgeInsets.symmetric(
-                                        horizontal: 16,
-                                        vertical: 12,
-                                      ),
+                                      contentPadding:
+                                          const EdgeInsets.symmetric(
+                                            horizontal: 16,
+                                            vertical: 12,
+                                          ),
                                     ),
-                                    items: ['Location 1', 'Location 2', 'Location 3']
-                                        .map((location) => DropdownMenuItem(
-                                              value: location,
-                                              child: Text(location),
-                                            ))
-                                        .toList(),
+                                    items:
+                                        [
+                                              'Location 1',
+                                              'Location 2',
+                                              'Location 3',
+                                            ]
+                                            .map(
+                                              (location) => DropdownMenuItem(
+                                                value: location,
+                                                child: Text(location),
+                                              ),
+                                            )
+                                            .toList(),
                                     onChanged: (value) {
                                       setState(() {
                                         selectedLocation = value;
@@ -198,10 +182,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     },
                                   ),
                                 ),
-                                const SizedBox(width: 12),
+                                const SizedBox(width: 8),
                                 Expanded(
                                   child: DropdownButtonFormField<String>(
-                                    value: selectedServiceType,
+                                    initialValue: selectedServiceType,
                                     decoration: InputDecoration(
                                       hintText: 'Service type...',
                                       border: OutlineInputBorder(
@@ -210,16 +194,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       filled: true,
                                       fillColor: Colors.grey[100],
-                                      contentPadding: const EdgeInsets.symmetric(
-                                        horizontal: 16,
-                                        vertical: 12,
-                                      ),
+                                      contentPadding:
+                                          const EdgeInsets.symmetric(
+                                            horizontal: 16,
+                                            vertical: 12,
+                                          ),
                                     ),
                                     items: ['AC Repair', 'Tires', 'Engine']
-                                        .map((service) => DropdownMenuItem(
-                                              value: service,
-                                              child: Text(service),
-                                            ))
+                                        .map(
+                                          (service) => DropdownMenuItem(
+                                            value: service,
+                                            child: Text(service),
+                                          ),
+                                        )
                                         .toList(),
                                     onChanged: (value) {
                                       setState(() {
@@ -355,9 +342,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const Text(
                           'Search Now',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -413,11 +398,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset(
-                              service['icon'],
-                              width: 40,
-                              height: 40,
-                            ),
+                            Image.asset(service['icon'], width: 40, height: 40),
                             const SizedBox(height: 8),
                             Text(
                               service['name'],
@@ -482,10 +463,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: Colors.grey[200]!,
-                        width: 1,
-                      ),
+                      border: Border.all(color: Colors.grey[200]!, width: 1),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
