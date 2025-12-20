@@ -3,13 +3,6 @@ import 'package:flutter_auto_service_app/theme/app_colors.dart';
 import 'package:flutter_auto_service_app/services/auth_service.dart';
 import 'package:flutter_auto_service_app/models/user_model.dart';
 
-class AppColors {
-  static const primaryBlue = Color(0xFF1E51DB);
-  static const textFieldBackground = Color(0xFFE9EEFB);
-  static const textBlack = Color(0xFF1F2937);
-  static const textGrey = Color(0xFF6B6B6B);
-}
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -59,14 +52,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w600,
-            color: AppColors.primaryBlue,
+            color: MyAppColors.primaryBlue,
           ),
         ),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () => _showEditProfileDialog(context),
-            icon: const Icon(Icons.edit_outlined, color: AppColors.primaryBlue),
+            icon: const Icon(Icons.edit_outlined, color: MyAppColors.primaryBlue),
           ),
         ],
       ),
@@ -108,7 +101,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.textBlack,
+                      color: MyAppColors.textBlack,
                     ),
                   ),
 
@@ -172,7 +165,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       vertical: 6,
                     ),
                     decoration: BoxDecoration(
-                      color: AppColors.textFieldBackground,
+                      color: MyAppColors.textFieldBackground,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -181,14 +174,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Icon(
                           _getProviderIcon(),
                           size: 16,
-                          color: AppColors.primaryBlue,
+                          color: MyAppColors.primaryBlue,
                         ),
                         const SizedBox(width: 6),
                         Text(
                           'Signed in with ${_getProviderName()}',
                           style: const TextStyle(
                             fontSize: 12,
-                            color: AppColors.primaryBlue,
+                            color: MyAppColors.primaryBlue,
                           ),
                         ),
                       ],
@@ -208,7 +201,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.textBlack,
+                            color: MyAppColors.textBlack,
                           ),
                         ),
                         const SizedBox(height: 16),
@@ -240,12 +233,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  color: AppColors.textFieldBackground,
+                                  color: MyAppColors.textFieldBackground,
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: const Icon(
                                   Icons.notifications_outlined,
-                                  color: AppColors.textGrey,
+                                  color: MyAppColors.textGrey,
                                   size: 22,
                                 ),
                               ),
@@ -259,7 +252,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
-                                        color: AppColors.textBlack,
+                                        color: MyAppColors.textBlack,
                                       ),
                                     ),
                                     const SizedBox(height: 4),
@@ -282,8 +275,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       () => isPushNotificationEnabled = value,
                                     );
                                   },
-                                  activeThumbColor: AppColors.primaryBlue,
-                                  activeTrackColor: AppColors.primaryBlue
+                                  activeThumbColor: MyAppColors.primaryBlue,
+                                  activeTrackColor: MyAppColors.primaryBlue
                                       .withValues(alpha: 0.5),
                                 ),
                               ),
@@ -293,15 +286,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                         const SizedBox(height: 16),
 
-                        // Change Password Card (only for email users)
                         if (_user?.authProvider == 'email')
                           _buildSettingsCard(
                             icon: Icons.lock_outline,
                             title: 'Change Password',
                             subtitle: 'Update your login password for security',
-                            onTap: () {
-                              // Handle change password
-                            },
+                            onTap: () {},
                           ),
 
                         const SizedBox(height: 32),
@@ -376,10 +366,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: AppColors.textFieldBackground,
+                color: MyAppColors.textFieldBackground,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Icon(icon, color: AppColors.textGrey, size: 22),
+              child: Icon(icon, color: MyAppColors.textGrey, size: 22),
             ),
             const SizedBox(width: 16),
             Expanded(
@@ -391,7 +381,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.textBlack,
+                      color: MyAppColors.textBlack,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -471,7 +461,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         filled: true,
-                        fillColor: AppColors.textFieldBackground,
+                        fillColor: MyAppColors.textFieldBackground,
                       ),
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -490,7 +480,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         filled: true,
-                        fillColor: AppColors.textFieldBackground,
+                        fillColor: MyAppColors.textFieldBackground,
                       ),
                       keyboardType: TextInputType.phone,
                     ),
@@ -550,7 +540,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           }
                         },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryBlue,
+                    backgroundColor: MyAppColors.primaryBlue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),

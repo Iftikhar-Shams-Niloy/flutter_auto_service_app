@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auto_service_app/services/auth_service.dart';
+import 'package:flutter_auto_service_app/theme/app_colors.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -33,7 +34,7 @@ class _AuthScreenState extends State<AuthScreen> {
   void _showError(String message) {
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), backgroundColor: Colors.red),
+      SnackBar(content: Text(message), backgroundColor: MyAppColors.warningRed),
     );
   }
 

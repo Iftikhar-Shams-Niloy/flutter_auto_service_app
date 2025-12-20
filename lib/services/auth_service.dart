@@ -8,13 +8,12 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Get current user
+  // <--- Get current user --->
   User? get currentUser => _auth.currentUser;
 
-  // Auth state stream
   Stream<User?> get authStateChanges => _auth.authStateChanges();
 
-  // Sign up with Email/Password
+  // <--- Sign up with Email/Password --->
   Future<UserCredential> signUpWithEmail({
     required String email,
     required String password,
@@ -27,7 +26,7 @@ class AuthService {
         password: password,
       );
 
-      // Create user document in Firestore
+      // <--- Create user (Firestore) --->
       if (credential.user != null) {
         final user = UserModel(
           uid: credential.user!.uid,
@@ -51,7 +50,7 @@ class AuthService {
     }
   }
 
-  // Sign in with Email/Password
+  // <--- Sign in with Email/Password --->
   Future<UserCredential> signInWithEmail({
     required String email,
     required String password,
@@ -66,18 +65,15 @@ class AuthService {
     }
   }
 
-  // Sign in with Google
+  // <--- Sign in with Google --->
   Future<UserCredential> signInWithGoogle() async {
     try {
       final GoogleSignIn googleSignIn = GoogleSignIn.instance;
 
-      // Initialize if needed
       await googleSignIn.initialize();
 
-      // Authenticate with Google
       final GoogleSignInAccount account = await googleSignIn.authenticate();
 
-      // Get authentication tokens
       final GoogleSignInAuthentication googleAuth = account.authentication;
 
       final credential = GoogleAuthProvider.credential(
@@ -86,7 +82,7 @@ class AuthService {
 
       final userCredential = await _auth.signInWithCredential(credential);
 
-      // Create or update user document in Firestore
+      // <--- Create or update in Firestore --->
       if (userCredential.user != null) {
         final userDoc = await _firestore
             .collection('users')
@@ -122,7 +118,7 @@ class AuthService {
     }
   }
 
-  // Sign in with Facebook (shows error as no App ID/Secret configured)
+  //! Sign in with Facebook (NOT IMPLEMENTED)
   Future<UserCredential> signInWithFacebook() async {
     try {
       final LoginResult result = await FacebookAuth.instance.login();
@@ -146,7 +142,7 @@ class AuthService {
         facebookAuthCredential,
       );
 
-      // Create or update user document in Firestore
+      // <--- Create or update user document in Firestore --->
       if (userCredential.user != null) {
         final userDoc = await _firestore
             .collection('users')
@@ -179,7 +175,7 @@ class AuthService {
     }
   }
 
-  // Update user profile
+  // <--- Update user profile --->
   Future<void> updateUserProfile({
     required String username,
     String? mobileNumber,
@@ -194,7 +190,7 @@ class AuthService {
     });
   }
 
-  // Get current user data from Firestore
+  // <--- Get current user data --->
   Future<UserModel?> getCurrentUserData() async {
     final user = _auth.currentUser;
     if (user == null) return null;
@@ -214,16 +210,10 @@ class AuthService {
     }
   }
 
-  // Sign out
   Future<void> signOut() async {
-    // Sign out from Google if signed in with Google
+    // Sign out from Google
     try {
       await GoogleSignIn.instance.signOut();
-    } catch (_) {}
-
-    // Sign out from Facebook if signed in with Facebook
-    try {
-      await FacebookAuth.instance.logOut();
     } catch (_) {}
 
     // Sign out from Firebase

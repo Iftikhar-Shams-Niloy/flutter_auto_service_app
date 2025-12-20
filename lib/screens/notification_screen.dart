@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auto_service_app/theme/app_colors.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-
-class AppColors {
-  static const primaryBlue = Color(0xFF1E51DB);
-  static const textFieldBackground = Color(0xFFE9EEFB);
-  static const textBlack = Color(0xFF1F2937);
-  static const textGrey = Color(0xFF6B6B6B);
-}
+import 'package:flutter_auto_service_app/models/notification_item_model.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -20,7 +15,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     NotificationItem(
       id: '1',
       icon: Icons.calendar_today,
-      iconColor: AppColors.primaryBlue,
+      iconColor: MyAppColors.primaryBlue,
       iconBackground: const Color(0xFFE9EEFB),
       title: 'Bookings Alerts',
       message: 'Good news! Anil Kumar just booked your Convo.',
@@ -30,7 +25,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
       id: '2',
       icon: Icons.notifications,
       iconColor: Colors.white,
-      iconBackground: AppColors.primaryBlue,
+      iconBackground: MyAppColors.primaryBlue,
       title: 'Reminder',
       message: 'Tomorrow is your Convo!',
       time: '1d ago',
@@ -40,7 +35,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
       id: '3',
       icon: Icons.star,
       iconColor: Colors.white,
-      iconBackground: AppColors.primaryBlue,
+      iconBackground: MyAppColors.primaryBlue,
       title: 'New Feature Alert',
       message: 'A new version of the app is available!',
       time: '5h ago',
@@ -116,7 +111,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           onPressed: (context) {
                             _deleteNotification(notification.id);
                           },
-                          backgroundColor: AppColors.primaryBlue,
+                          backgroundColor: MyAppColors.primaryBlue,
                           foregroundColor: Colors.white,
                           icon: Icons.delete_outline,
                           label: 'Delete',
@@ -129,7 +124,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: AppColors.primaryBlue,
+                          color: MyAppColors.primaryBlue,
                           width: 1.5,
                         ),
                       ),
@@ -164,7 +159,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                         vertical: 2,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: AppColors.primaryBlue,
+                                        color: MyAppColors.primaryBlue,
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Text(
@@ -191,7 +186,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                   style: const TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
-                                    color: AppColors.textBlack,
+                                    color: MyAppColors.textBlack,
                                   ),
                                 ),
                                 const SizedBox(height: 8),
@@ -199,7 +194,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                   notification.message,
                                   style: const TextStyle(
                                     fontSize: 14,
-                                    color: AppColors.textGrey,
+                                    color: MyAppColors.textGrey,
                                     height: 1.4,
                                   ),
                                 ),
@@ -208,7 +203,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                   notification.time,
                                   style: const TextStyle(
                                     fontSize: 13,
-                                    color: AppColors.textGrey,
+                                    color: MyAppColors.textGrey,
                                   ),
                                 ),
                               ],
@@ -225,24 +220,3 @@ class _NotificationScreenState extends State<NotificationScreen> {
   }
 }
 
-class NotificationItem {
-  final String id;
-  final IconData icon;
-  final Color iconColor;
-  final Color iconBackground;
-  final String title;
-  final String message;
-  final String time;
-  final String? badge;
-
-  NotificationItem({
-    required this.id,
-    required this.icon,
-    required this.iconColor,
-    required this.iconBackground,
-    required this.title,
-    required this.message,
-    required this.time,
-    this.badge,
-  });
-}

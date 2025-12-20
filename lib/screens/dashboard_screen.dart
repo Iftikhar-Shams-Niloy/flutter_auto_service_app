@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auto_service_app/screens/notification_screen.dart';
-import 'package:flutter_auto_service_app/screens/profile_screen.dart'
-    hide AppColors;
+import 'package:flutter_auto_service_app/screens/profile_screen.dart';
+import 'package:flutter_auto_service_app/theme/app_colors.dart';
 import 'home_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -43,7 +43,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           },
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.white,
-          selectedItemColor: AppColors.primaryBlue,
+          selectedItemColor: MyAppColors.primaryBlue,
           unselectedItemColor: Colors.grey,
           selectedLabelStyle: const TextStyle(
             fontSize: 12,
