@@ -59,7 +59,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         actions: [
           IconButton(
             onPressed: () => _showEditProfileDialog(context),
-            icon: const Icon(Icons.edit_outlined, color: MyAppColors.primaryBlue),
+            icon: const Icon(
+              Icons.edit_outlined,
+              color: MyAppColors.primaryBlue,
+            ),
           ),
         ],
       ),
@@ -76,7 +79,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: 120,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.grey[300],
+                      color: MyAppColors.textFieldBackground,
                     ),
                     child:
                         _user?.photoUrl != null && _user!.photoUrl!.isNotEmpty
@@ -118,7 +121,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Icon(
                               Icons.email_outlined,
                               size: 18,
-                              color: Colors.grey[600],
+                              color: MyAppColors.textGrey,
                             ),
                             const SizedBox(width: 6),
                             Flexible(
@@ -126,7 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 _user?.email ?? 'No email',
                                 style: TextStyle(
                                   fontSize: 14,
-                                  color: Colors.grey[600],
+                                  color: MyAppColors.textGrey,
                                 ),
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -140,14 +143,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Icon(
                               Icons.phone_outlined,
                               size: 18,
-                              color: Colors.grey[600],
+                              color: MyAppColors.textGrey,
                             ),
                             const SizedBox(width: 6),
                             Text(
                               _user?.mobileNumber ?? 'No phone number',
                               style: TextStyle(
                                 fontSize: 14,
-                                color: Colors.grey[600],
+                                color: MyAppColors.textGrey,
                               ),
                             ),
                           ],
@@ -222,7 +225,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: Colors.grey[200]!,
+                              color: MyAppColors.textFieldBackground,
                               width: 1,
                             ),
                           ),
@@ -260,7 +263,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       'Enable Push Notification',
                                       style: TextStyle(
                                         fontSize: 13,
-                                        color: Colors.grey[600],
+                                        color: MyAppColors.textGrey,
                                       ),
                                     ),
                                   ],
@@ -338,7 +341,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       height: 120,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.grey[400],
+        color: MyAppColors.textFieldBackground,
       ),
       child: const Icon(Icons.person, size: 60, color: Colors.white),
     );
@@ -357,7 +360,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.grey[200]!, width: 1),
+          border: Border.all(color: MyAppColors.textFieldBackground, width: 1),
         ),
         padding: const EdgeInsets.all(16),
         child: Row(
@@ -387,12 +390,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: TextStyle(fontSize: 13, color: Colors.grey[600]),
+                    style: TextStyle(fontSize: 13, color: MyAppColors.textGrey),
                   ),
                 ],
               ),
             ),
-            Icon(Icons.chevron_right, color: Colors.grey[400], size: 24),
+            Icon(Icons.chevron_right, color: MyAppColors.textFieldBackground, size: 24),
           ],
         ),
       ),

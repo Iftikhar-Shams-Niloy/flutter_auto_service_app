@@ -159,7 +159,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         borderSide: BorderSide.none,
                                       ),
                                       filled: true,
-                                      fillColor: MyAppColors.textGrey,
+                                      fillColor:
+                                          MyAppColors.textFieldBackground,
                                       contentPadding:
                                           const EdgeInsets.symmetric(
                                             horizontal: 16,
@@ -379,19 +380,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    mainAxisSpacing: 16,
+                    mainAxisSpacing: 20,
                     crossAxisSpacing: 16,
-                    childAspectRatio: 1,
+                    childAspectRatio: 2.0,
                   ),
                   itemCount: popularServices.length,
                   itemBuilder: (context, index) {
                     final service = popularServices[index];
                     return InkWell(
                       onTap: () {
-                        // Handle service tap
+                        // <--- ON TAP SERVICE FUNCTIONALITY --->
                       },
                       borderRadius: BorderRadius.circular(16),
                       child: Container(
+                        height: 60,
+                        width: 120,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
@@ -400,11 +403,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 1,
                           ),
                         ),
-                        child: Column(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset(service['icon'], width: 40, height: 40),
-                            const SizedBox(height: 8),
+                            Image.asset(service['icon'], width: 24, height: 24),
+                            const SizedBox(width: 4),
                             Text(
                               service['name'],
                               style: const TextStyle(

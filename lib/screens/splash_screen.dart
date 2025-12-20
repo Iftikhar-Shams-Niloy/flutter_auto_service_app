@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auto_service_app/main.dart';
+import 'package:flutter_auto_service_app/theme/app_colors.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -24,26 +25,14 @@ class SplashScreen extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
 
-                const SizedBox(height: 80),
+                const Spacer(),
 
-                // Find button
                 Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 2),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 80,
-                    vertical: 16,
-                  ),
-                  child: Text(
-                    'Find',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.blue[700],
-                      letterSpacing: 1.5,
-                    ),
+                  padding: const EdgeInsets.symmetric(vertical: 80),
+                  child: Image(
+                    image: AssetImage("assets/images/find.png"),
+                    height: 60,
+                    width: 160,
                   ),
                 ),
               ],
@@ -62,7 +51,7 @@ class SplashScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF2563EB),
+                backgroundColor: MyAppColors.primaryBlue,
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),

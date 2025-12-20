@@ -25,7 +25,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: Container(
+        height: 120,
         decoration: BoxDecoration(
+          color: Colors.white,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.1),
@@ -50,6 +52,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             fontWeight: FontWeight.w600,
           ),
           unselectedLabelStyle: const TextStyle(fontSize: 12),
+          elevation: 0,
           items: const [
             BottomNavigationBarItem(
               icon: Image(

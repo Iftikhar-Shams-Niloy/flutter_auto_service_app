@@ -80,14 +80,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   Icon(
                     Icons.notifications_off_outlined,
                     size: 80,
-                    color: Colors.grey[300],
+                    color: MyAppColors.textFieldBackground,
                   ),
                   const SizedBox(height: 16),
                   Text(
                     'No notifications',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.grey[600],
+                      color: MyAppColors.textGrey,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
