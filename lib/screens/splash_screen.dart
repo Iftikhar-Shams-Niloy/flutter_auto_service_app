@@ -18,10 +18,11 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const Spacer(flex: 2),
                 // Logo image
                 Image.asset(
                   'assets/images/splash_image.png',
-                  width: MediaQuery.of(context).size.width * 0.8,
+                  width: 360,
                   fit: BoxFit.contain,
                 ),
 

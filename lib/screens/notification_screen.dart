@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auto_service_app/theme/app_colors.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_auto_service_app/models/notification_item_model.dart';
+import 'package:flutter_auto_service_app/services/notification_service.dart';
 
 class NotificationScreen extends StatefulWidget {
-  const NotificationScreen({Key? key}) : super(key: key);
+  const NotificationScreen({super.key});
 
   @override
   State<NotificationScreen> createState() => _NotificationScreenState();
@@ -103,9 +104,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   padding: const EdgeInsets.only(bottom: 16),
                   child: Slidable(
                     key: ValueKey(notification.id),
-                    endActionPane: ActionPane(
-                      motion: const ScrollMotion(),
-                      extentRatio: 0.25,
+                    startActionPane: ActionPane(
+                      motion: const BehindMotion(),
+                      extentRatio: 0.3,
+                      dismissible: DismissiblePane(
+                        onDismissed: () {
+                          _deleteNotification(notification.id);
+                        },
+                      ),
                       children: [
                         SlidableAction(
                           onPressed: (context) {
@@ -114,102 +120,140 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           backgroundColor: MyAppColors.primaryBlue,
                           foregroundColor: Colors.white,
                           icon: Icons.delete_outline,
-                          label: 'Delete',
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                          autoClose: true,
                         ),
                       ],
                     ),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: MyAppColors.primaryBlue,
-                          width: 1.5,
-                        ),
+                    endActionPane: ActionPane(
+                      motion: const BehindMotion(),
+                      extentRatio: 0.3,
+                      dismissible: DismissiblePane(
+                        onDismissed: () {
+                          _deleteNotification(notification.id);
+                        },
                       ),
-                      padding: const EdgeInsets.all(16),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // Icon
-                          Container(
-                            width: 48,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              color: notification.iconBackground,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Stack(
-                              children: [
-                                Center(
-                                  child: Icon(
-                                    notification.icon,
-                                    color: notification.iconColor,
-                                    size: 24,
+                      children: [
+                        SlidableAction(
+                          onPressed: (context) {
+                            _deleteNotification(notification.id);
+                          },
+                          backgroundColor: MyAppColors.primaryBlue,
+                          foregroundColor: Colors.white,
+                          icon: Icons.delete_outline,
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                          autoClose: true,
+                        ),
+                      ],
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        // Trigger phone notification
+                        NotificationService().showNotification(
+                          id: int.parse(notification.id),
+                          title: notification.title,
+                          body: notification.message,
+                        );
+                      },
+                      borderRadius: BorderRadius.circular(12),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: MyAppColors.primaryBlue,
+                            width: 1.5,
+                          ),
+                        ),
+                        padding: const EdgeInsets.all(16),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Icon
+                            Container(
+                              width: 48,
+                              height: 48,
+                              decoration: BoxDecoration(
+                                color: notification.iconBackground,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Center(
+                                    child: Icon(
+                                      notification.icon,
+                                      color: notification.iconColor,
+                                      size: 24,
+                                    ),
                                   ),
-                                ),
-                                if (notification.badge != null)
-                                  Positioned(
-                                    top: 0,
-                                    right: 0,
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 6,
-                                        vertical: 2,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: MyAppColors.primaryBlue,
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Text(
-                                        notification.badge!,
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 8,
-                                          fontWeight: FontWeight.bold,
+                                  if (notification.badge != null)
+                                    Positioned(
+                                      top: 0,
+                                      right: 0,
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 6,
+                                          vertical: 2,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: MyAppColors.primaryBlue,
+                                          borderRadius: BorderRadius.circular(
+                                            8,
+                                          ),
+                                        ),
+                                        child: Text(
+                                          notification.badge!,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 8,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                          const SizedBox(width: 12),
-                          // Content
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  notification.title,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: MyAppColors.textBlack,
+                            const SizedBox(width: 12),
+                            // Content
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    notification.title,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: MyAppColors.textBlack,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  notification.message,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    color: MyAppColors.textGrey,
-                                    height: 1.4,
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    notification.message,
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      color: MyAppColors.textGrey,
+                                      height: 1.4,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  notification.time,
-                                  style: const TextStyle(
-                                    fontSize: 13,
-                                    color: MyAppColors.textGrey,
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    notification.time,
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                      color: MyAppColors.textGrey,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -219,4 +263,3 @@ class _NotificationScreenState extends State<NotificationScreen> {
     );
   }
 }
-

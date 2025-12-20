@@ -56,15 +56,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () => _showEditProfileDialog(context),
-            icon: const Icon(
-              Icons.edit_outlined,
-              color: MyAppColors.primaryBlue,
-            ),
-          ),
-        ],
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -395,7 +386,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-            Icon(Icons.chevron_right, color: MyAppColors.textFieldBackground, size: 24),
+            Icon(
+              Icons.chevron_right,
+              color: MyAppColors.textFieldBackground,
+              size: 24,
+            ),
           ],
         ),
       ),

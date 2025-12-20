@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/// Wrapper widget that listens to auth state changes
+//! <--- Wrapper to listen auth changes --->
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});
 
