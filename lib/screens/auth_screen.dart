@@ -124,7 +124,10 @@ class _AuthScreenState extends State<AuthScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel', style: TextStyle(color: Colors.grey[600])),
+            child: Text(
+              'Cancel',
+              style: TextStyle(color: MyAppColors.textBlack),
+            ),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -143,7 +146,7 @@ class _AuthScreenState extends State<AuthScreen> {
               }
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF2563EB),
+              backgroundColor: MyAppColors.primaryBlue,
             ),
             child: const Text('Send', style: TextStyle(color: Colors.white)),
           ),
@@ -172,7 +175,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue[700],
+                      color: MyAppColors.primaryBlue,
                     ),
                   ),
 
@@ -183,7 +186,10 @@ class _AuthScreenState extends State<AuthScreen> {
                     isLogin
                         ? 'Your next opportunity is just a tap away.'
                         : 'Start your journey with us today.',
-                    style: const TextStyle(fontSize: 16, color: Colors.grey),
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: MyAppColors.textGrey,
+                    ),
                     textAlign: TextAlign.center,
                   ),
 
@@ -193,7 +199,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   if (!isLogin) ...[
                     Container(
                       decoration: BoxDecoration(
-                        color: const Color(0xFFE8EAF6),
+                        color: MyAppColors.textFieldBackground,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: TextFormField(
@@ -201,12 +207,12 @@ class _AuthScreenState extends State<AuthScreen> {
                         decoration: const InputDecoration(
                           hintText: 'Username',
                           hintStyle: TextStyle(
-                            color: Colors.grey,
+                            color: MyAppColors.textGrey,
                             fontSize: 16,
                           ),
                           prefixIcon: Icon(
                             Icons.person_outline,
-                            color: Colors.grey,
+                            color: MyAppColors.textGrey,
                           ),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
@@ -229,7 +235,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   // Email input
                   Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFFE8EAF6),
+                      color: MyAppColors.textFieldBackground,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: TextFormField(
@@ -237,10 +243,13 @@ class _AuthScreenState extends State<AuthScreen> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
                         hintText: 'Enter your email',
-                        hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+                        hintStyle: TextStyle(
+                          color: MyAppColors.textGrey,
+                          fontSize: 16,
+                        ),
                         prefixIcon: Icon(
                           Icons.email_outlined,
-                          color: Colors.grey,
+                          color: MyAppColors.textGrey,
                         ),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(
@@ -266,7 +275,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   if (!isLogin) ...[
                     Container(
                       decoration: BoxDecoration(
-                        color: const Color(0xFFE8EAF6),
+                        color: MyAppColors.textFieldBackground,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: TextFormField(
@@ -275,12 +284,12 @@ class _AuthScreenState extends State<AuthScreen> {
                         decoration: const InputDecoration(
                           hintText: 'Mobile Number (optional)',
                           hintStyle: TextStyle(
-                            color: Colors.grey,
+                            color: MyAppColors.textGrey,
                             fontSize: 16,
                           ),
                           prefixIcon: Icon(
                             Icons.phone_outlined,
-                            color: Colors.grey,
+                            color: MyAppColors.textGrey,
                           ),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
@@ -296,7 +305,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   // Password input
                   Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFFE8EAF6),
+                      color: MyAppColors.textFieldBackground,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: TextFormField(
@@ -305,19 +314,19 @@ class _AuthScreenState extends State<AuthScreen> {
                       decoration: InputDecoration(
                         hintText: 'Password',
                         hintStyle: const TextStyle(
-                          color: Colors.grey,
+                          color: MyAppColors.textGrey,
                           fontSize: 16,
                         ),
                         prefixIcon: const Icon(
                           Icons.lock_outline,
-                          color: Colors.grey,
+                          color: MyAppColors.textGrey,
                         ),
                         suffixIcon: IconButton(
                           icon: Icon(
                             obscurePassword
                                 ? Icons.visibility_off_outlined
                                 : Icons.visibility_outlined,
-                            color: Colors.grey,
+                            color: MyAppColors.textGrey,
                           ),
                           onPressed: () => setState(
                             () => obscurePassword = !obscurePassword,
@@ -361,7 +370,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 side: const BorderSide(
-                                  color: Colors.grey,
+                                  color: MyAppColors.textGrey,
                                   width: 1.5,
                                 ),
                               ),
@@ -370,7 +379,7 @@ class _AuthScreenState extends State<AuthScreen> {
                             const Text(
                               'Remember me',
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: MyAppColors.textGrey,
                                 fontSize: 14,
                               ),
                             ),
@@ -381,7 +390,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           child: Text(
                             'Forgot Password?',
                             style: TextStyle(
-                              color: Colors.blue[700],
+                              color: MyAppColors.primaryBlue,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                             ),
@@ -399,7 +408,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     child: ElevatedButton(
                       onPressed: _isLoading ? null : _handleEmailAuth,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF2563EB),
+                        backgroundColor: MyAppColors.primaryBlue,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(28),
@@ -429,10 +438,9 @@ class _AuthScreenState extends State<AuthScreen> {
 
                   const SizedBox(height: 40),
 
-                  // Or divider
                   const Text(
                     'or',
-                    style: TextStyle(color: Colors.grey, fontSize: 16),
+                    style: TextStyle(color: MyAppColors.textGrey, fontSize: 16),
                   ),
 
                   const SizedBox(height: 32),
@@ -445,7 +453,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         width: 60,
                         height: 60,
                         decoration: const BoxDecoration(
-                          color: Color(0xFFE8EAF6),
+                          color: MyAppColors.textFieldBackground,
                           shape: BoxShape.circle,
                         ),
                         child: IconButton(
@@ -465,7 +473,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         width: 60,
                         height: 60,
                         decoration: const BoxDecoration(
-                          color: Color(0xFFE8EAF6),
+                          color: MyAppColors.textFieldBackground,
                           shape: BoxShape.circle,
                         ),
                         child: IconButton(
@@ -491,7 +499,7 @@ class _AuthScreenState extends State<AuthScreen> {
                             ? "Don't have an account? "
                             : "Already have an account? ",
                         style: const TextStyle(
-                          color: Colors.grey,
+                          color: MyAppColors.textGrey,
                           fontSize: 15,
                         ),
                       ),
@@ -513,7 +521,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         child: Text(
                           isLogin ? 'Signup' : 'Login',
                           style: TextStyle(
-                            color: Colors.blue[700],
+                            color: MyAppColors.primaryBlue,
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
