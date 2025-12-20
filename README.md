@@ -80,29 +80,41 @@
 <table>
 <tr>
 <td colspan="3" align="center"><h3>Authentication & Onboarding</h3></td>
-<td colspan="2" align="center"><h3>Main Features</h3></td>
+<td colspan="3" align="center"><h3>Main Features</h3></td>
 </tr>
 <tr>
-<td><strong>Splash Screen</strong><br/>Welcome screen with branding</td>
-<td><strong>Sign In</strong><br/>Email & social login options</td>
-<td><strong>Sign Up</strong><br/>New user registration</td>
-<td><strong>Home Screen</strong><br/>Service discovery hub</td>
-<td><strong>Notifications</strong><br/>Alert management</td>
+<td align="center">
+<img src="screenshots/splash_screen.png" alt="Splash Screen" width="200"/><br/>
+<strong>Splash Screen</strong><br/>
+<em>Welcome screen with branding</em>
+</td>
+<td align="center">
+<img src="screenshots/login_screen.png" alt="Login Screen" width="200"/><br/>
+<strong>Sign In</strong><br/>
+<em>Email & social login options</em>
+</td>
+<td align="center">
+<img src="screenshots/signup_screen.png" alt="Sign Up Screen" width="200"/><br/>
+<strong>Sign Up</strong><br/>
+<em>New user registration</em>
+</td>
+<td align="center">
+<img src="screenshots/home_screen.png" alt="Home Screen" width="200"/><br/>
+<strong>Home Screen</strong><br/>
+<em>Service discovery hub</em>
+</td>
+<td align="center">
+<img src="screenshots/notificaton_screen_with_notification.png" alt="Notifications" width="200"/><br/>
+<strong>Notifications</strong><br/>
+<em>Alert management with push</em>
+</td>
+<td align="center">
+<img src="screenshots/profile_screen.png" alt="Profile Screen" width="200"/><br/>
+<strong>Profile View</strong><br/>
+<em>User information & settings</em>
+</td>
 </tr>
 </table>
-
-<table>
-<tr>
-<td colspan="3" align="center"><h3>User Profile & Settings</h3></td>
-</tr>
-<tr>
-<td><strong>Profile View</strong><br/>User information display</td>
-<td><strong>Edit Profile</strong><br/>Update user details</td>
-<td><strong>Settings</strong><br/>App preferences</td>
-</tr>
-</table>
-
-<p><em>Note: Add your actual screenshots in the format shown above for better visual documentation</em></p>
 
 <hr />
 
@@ -373,8 +385,6 @@ git commit -m "Add: description of your feature"</code></pre>
 </ul>
 
 <hr />
-
-
 
 <h3 align="center">Thank you for exploring <strong>Flutter Auto Service App</strong>! </h3>
 <p align="center">Feel free to star ⭐ the repository if you find it helpful and contribute to make it even better!</p>
