@@ -84,32 +84,32 @@
 </tr>
 <tr>
 <td align="center">
-<img src="screenshots/splash_screen.png" alt="Splash Screen" width="200"/><br/>
+<img src="screenshots/splash_screen.png" alt="Splash Screen" height="500"/><br/>
 <strong>Splash Screen</strong><br/>
 <em>Welcome screen with branding</em>
 </td>
 <td align="center">
-<img src="screenshots/login_screen.png" alt="Login Screen" width="200"/><br/>
+<img src="screenshots/login_screen.png" alt="Login Screen" height="500"/><br/>
 <strong>Sign In</strong><br/>
 <em>Email & social login options</em>
 </td>
 <td align="center">
-<img src="screenshots/signup_screen.png" alt="Sign Up Screen" width="200"/><br/>
+<img src="screenshots/signup_screen.png" alt="Sign Up Screen" height="500"/><br/>
 <strong>Sign Up</strong><br/>
 <em>New user registration</em>
 </td>
 <td align="center">
-<img src="screenshots/home_screen.png" alt="Home Screen" width="200"/><br/>
+<img src="screenshots/home_screen.png" alt="Home Screen" height="500"/><br/>
 <strong>Home Screen</strong><br/>
 <em>Service discovery hub</em>
 </td>
 <td align="center">
-<img src="screenshots/notificaton_screen_with_notification.png" alt="Notifications" width="200"/><br/>
+<img src="screenshots/notificaton_screen_with_notification.png" alt="Notifications" height="500"/><br/>
 <strong>Notifications</strong><br/>
 <em>Alert management with push</em>
 </td>
 <td align="center">
-<img src="screenshots/profile_screen.png" alt="Profile Screen" width="200"/><br/>
+<img src="screenshots/profile_screen.png" alt="Profile Screen" height="500"/><br/>
 <strong>Profile View</strong><br/>
 <em>User information & settings</em>
 </td>
