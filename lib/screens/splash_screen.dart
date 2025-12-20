@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auto_service_app/main.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -55,8 +56,10 @@ class SplashScreen extends StatelessWidget {
             height: 92,
             child: ElevatedButton(
               onPressed: () {
-                // Add navigation logic here
-                // Example: Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NextScreen()));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AuthWrapper()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF2563EB),
@@ -69,11 +72,11 @@ class SplashScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Let's go",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Image.asset(
                     "assets/images/right_sign.png",
                     height: 30,
