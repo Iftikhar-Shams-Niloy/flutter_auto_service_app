@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_auto_service_app/theme/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -72,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF2563EB),
+                            color: MyAppColors.primaryBlue,
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Icon(
@@ -94,8 +95,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     CircleAvatar(
                       radius: 22,
-                      backgroundColor: Colors.grey[300],
-                      child: const Icon(Icons.person, color: Colors.grey),
+                      backgroundColor: MyAppColors.textFieldBackground,
+                      child: const Icon(
+                        Icons.person,
+                        color: MyAppColors.textGrey,
+                      ),
                     ),
                   ],
                 ),
@@ -109,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF2563EB), Color(0xFF1E40AF)],
+                      colors: [MyAppColors.primaryBlue, Color(0xFF1E40AF)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -147,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 Expanded(
                                   child: DropdownButtonFormField<String>(
-                                    value: selectedLocation,
+                                    initialValue: selectedLocation,
                                     decoration: InputDecoration(
                                       hintText: 'location',
                                       border: OutlineInputBorder(
@@ -155,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         borderSide: BorderSide.none,
                                       ),
                                       filled: true,
-                                      fillColor: Colors.grey[100],
+                                      fillColor: MyAppColors.textGrey,
                                       contentPadding:
                                           const EdgeInsets.symmetric(
                                             horizontal: 16,
@@ -193,7 +197,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         borderSide: BorderSide.none,
                                       ),
                                       filled: true,
-                                      fillColor: Colors.grey[100],
+                                      fillColor:
+                                          MyAppColors.textFieldBackground,
                                       contentPadding:
                                           const EdgeInsets.symmetric(
                                             horizontal: 16,
@@ -226,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   // Handle search
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFF2563EB),
+                                  backgroundColor: MyAppColors.primaryBlue,
                                   foregroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
@@ -391,7 +396,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(
-                            color: Colors.grey[200]!,
+                            color: MyAppColors.textFieldBackground,
                             width: 1,
                           ),
                         ),
@@ -440,7 +445,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: const Text(
                         'View All',
                         style: TextStyle(
-                          color: Color(0xFF2563EB),
+                          color: MyAppColors.primaryBlue,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -463,7 +468,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.grey[200]!, width: 1),
+                      border: Border.all(
+                        color: MyAppColors.textFieldBackground,
+                        width: 1,
+                      ),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
@@ -480,7 +488,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 return Container(
                                   width: 80,
                                   height: 80,
-                                  color: Colors.grey[300],
+                                  color: MyAppColors.textFieldBackground,
                                   child: const Icon(Icons.garage, size: 40),
                                 );
                               },
@@ -512,7 +520,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       '${garage['rating']} (${garage['reviews']})',
                                       style: TextStyle(
                                         fontSize: 13,
-                                        color: Colors.grey[600],
+                                        color: MyAppColors.textGrey,
                                       ),
                                     ),
                                     const SizedBox(width: 8),
@@ -522,7 +530,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       garage['distance'],
                                       style: TextStyle(
                                         fontSize: 13,
-                                        color: Colors.grey[600],
+                                        color: MyAppColors.textGrey,
                                       ),
                                     ),
                                   ],
@@ -536,7 +544,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         vertical: 2,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: Colors.green[50],
+                                        color: MyAppColors.textFieldBackground,
                                         borderRadius: BorderRadius.circular(4),
                                       ),
                                       child: Text(
@@ -554,7 +562,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         garage['services'],
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.grey[600],
+                                          color: MyAppColors.textGrey,
                                         ),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
@@ -570,7 +578,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               // Handle more options
                             },
                             icon: const Icon(Icons.more_vert),
-                            color: Colors.grey[600],
+                            color: MyAppColors.textGrey,
                           ),
                         ],
                       ),
