@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-class AppColors {
+class MyAppColors {
   static const primaryBlue = Color(0xFF1E51DB);
   static const textFieldBackground = Color(0xFFE9EEFB);
   static const textBlack = Color(0xFF1F2937);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auto_service_app/theme/app_colors.dart';
 
 class AppColors {
   static const primaryBlue = Color(0xFF1E51DB);
@@ -56,11 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   shape: BoxShape.circle,
                   color: Colors.grey[400],
                 ),
-                child: const Icon(
-                  Icons.person,
-                  size: 60,
-                  color: Colors.white,
-                ),
+                child: const Icon(Icons.person, size: 60, color: Colors.white),
               ),
             ),
 
@@ -82,32 +79,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.email_outlined,
-                  size: 18,
-                  color: Colors.grey[600],
-                ),
+                Icon(Icons.email_outlined, size: 18, color: Colors.grey[600]),
                 const SizedBox(width: 6),
                 Text(
                   'nicolas@email.com',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 ),
                 const SizedBox(width: 16),
-                Icon(
-                  Icons.phone_outlined,
-                  size: 18,
-                  color: Colors.grey[600],
-                ),
+                Icon(Icons.phone_outlined, size: 18, color: Colors.grey[600]),
                 const SizedBox(width: 6),
                 Text(
                   '+1 (555) 123-4567',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 ),
               ],
             ),
@@ -135,10 +118,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: Colors.grey[200]!,
-                        width: 1,
-                      ),
+                      border: Border.all(color: Colors.grey[200]!, width: 1),
                     ),
                     padding: const EdgeInsets.all(16),
                     child: Row(
@@ -190,7 +170,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               });
                             },
                             activeThumbColor: AppColors.primaryBlue,
-                            activeTrackColor: AppColors.primaryBlue.withValues(alpha: 0.5),
+                            activeTrackColor: AppColors.primaryBlue.withValues(
+                              alpha: 0.5,
+                            ),
                           ),
                         ),
                       ],
@@ -209,10 +191,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: Colors.grey[200]!,
-                          width: 1,
-                        ),
+                        border: Border.all(color: Colors.grey[200]!, width: 1),
                       ),
                       padding: const EdgeInsets.all(16),
                       child: Row(
@@ -272,9 +251,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       onPressed: () {
                         _showSignOutDialog(context);
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.logout,
-                        color: Colors.red,
+                        color: MyAppColors.warningRed,
                         size: 20,
                       ),
                       label: const Text(
@@ -282,7 +261,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
-                          color: Colors.red,
+                          color: MyAppColors.warningRed,
                         ),
                       ),
                       style: TextButton.styleFrom(
@@ -314,15 +293,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           title: const Text(
             'Sign Out',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
           content: const Text(
             'Are you sure you want to sign out?',
-            style: TextStyle(
-              fontSize: 16,
-            ),
+            style: TextStyle(fontSize: 16),
           ),
           actions: [
             TextButton(
@@ -346,7 +321,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: const Text(
                 'Sign Out',
                 style: TextStyle(
-                  color: Colors.red,
+                  color: MyAppColors.warningRed,
                   fontWeight: FontWeight.w600,
                 ),
               ),
