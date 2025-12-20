@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/splash_image.png" alt="Auto Service App Logo" style="height: 180px;">
+  <img src="assets/images/splash_image.png" alt="Auto Service App Logo" style="height: 120px;">
 </p>
 <h1 align="center">Flutter Auto Service App</h1>
 
@@ -9,7 +9,7 @@
 
 <hr />
 
-<h2>🚗 Overview</h2>
+<h2> Overview</h2>
 
 <p>
   The Flutter Auto Service App addresses the common challenge of finding reliable auto repair services. Built with Flutter and powered by Firebase, the application provides users with a seamless experience for discovering top-rated garages, browsing popular automotive services, and managing their service appointments. The app features a complete authentication system, real-time notifications, and personalized user profiles, making vehicle maintenance management effortless.
@@ -17,18 +17,18 @@
 
 <hr />
 
-<h2>✨ Key Features</h2>
+<h2> Key Features</h2>
 
-<h3>🔐 Authentication & User Management</h3>
+<h3> Authentication & User Management</h3>
 <ul>
   <li><strong>Multiple Sign-In Options</strong> — Email/Password, Google Sign-In, and Facebook authentication</li>
-  <li><strong>Secure Registration</strong> — User sign-up with email verification and password validation</li>
+  <li><strong>Secure Registration</strong> — User sign-up with email verification and password validation or using Google Account</li>
   <li><strong>Password Recovery</strong> — Forgot password functionality with email reset link</li>
   <li><strong>Remember Me</strong> — Optional persistent login for convenience</li>
   <li><strong>User Profiles</strong> — Personalized profiles stored in Firebase Firestore with editable information</li>
 </ul>
 
-<h3>🏠 Home & Service Discovery</h3>
+<h3> Home & Service Discovery</h3>
 <ul>
   <li><strong>Location-Based Search</strong> — Find auto service centers by location with dropdown selection</li>
   <li><strong>Service Type Filter</strong> — Filter garages by specific services (AC Repair, Tires, Engine, etc.)</li>
@@ -39,7 +39,7 @@
   <li><strong>Service Status Indicators</strong> — Real-time open/closed status for each garage</li>
 </ul>
 
-<h3>🔔 Notification System</h3>
+<h3> Notification System</h3>
 <ul>
   <li><strong>In-App Notifications</strong> — Display booking alerts, reminders, and promotional messages</li>
   <li><strong>Push Notifications</strong> — Local push notifications triggered by tapping notification items</li>
@@ -48,7 +48,7 @@
   <li><strong>Custom Icons & Colors</strong> — Category-specific notification styling</li>
 </ul>
 
-<h3>👤 Profile Management</h3>
+<h3> Profile Management</h3>
 <ul>
   <li><strong>User Information Display</strong> — Show username, email, mobile number, and profile photo</li>
   <li><strong>Edit Profile</strong> — Update user details with real-time Firestore synchronization</li>
@@ -59,7 +59,7 @@
   <li><strong>Account Management</strong> — Secure logout and account deletion options</li>
 </ul>
 
-<h3>🎨 UI/UX Excellence</h3>
+<h3> UI/UX Excellence</h3>
 <ul>
   <li><strong>Modern Material Design</strong> — Clean, professional interface following Material Design guidelines</li>
   <li><strong>Custom Color Scheme</strong> — Consistent branding with primary blue theme</li>
@@ -73,7 +73,7 @@
 
 <hr />
 
-<h2>📸 Screenshots & Demo</h2>
+<h2> Screenshots & Demo</h2>
 
 <p>Below are screenshots showcasing the application's key screens and features:</p>
 
@@ -141,7 +141,7 @@
 
 <hr />
 
-<h2>📁 Project Structure</h2>
+<h2> Project Structure</h2>
 
 <pre>
 /lib
@@ -182,14 +182,6 @@
       ├── tires_icon.png
       ├── engine_icon.png
       └── battery_icon.png, etc.
-
-/android                                  # Android-specific configuration
-  ├── app/
-  │   ├── build.gradle.kts                # Build configuration with desugaring
-  │   └── src/main/
-  │       └── AndroidManifest.xml         # Permissions & app metadata
-
-/ios                                      # iOS-specific configuration
 </pre>
 
 <hr />
@@ -326,22 +318,22 @@ service cloud.firestore {
 
 <hr />
 
-<h2>🚀 Features in Development</h2>
+<h2> Features in Development</h2>
 
 <ul>
-  <li>🗓 <strong>Booking System</strong> — Schedule appointments with garages</li>
-  <li>💬 <strong>Chat Support</strong> — Real-time communication with service centers</li>
-  <li>⭐ <strong>Review & Rating</strong> — User feedback on service experiences</li>
-  <li>📍 <strong>Map Integration</strong> — Google Maps navigation to garages</li>
-  <li>💳 <strong>Payment Gateway</strong> — In-app payment for services</li>
-  <li>📊 <strong>Service History</strong> — Track past bookings and maintenance records</li>
-  <li>🔍 <strong>Advanced Search</strong> — Filter by price, distance, ratings, and availability</li>
-  <li>🌐 <strong>Multi-language Support</strong> — Localization for different regions</li>
+  <li> <strong>Booking System</strong> — Schedule appointments with garages</li>
+  <li> <strong>Chat Support</strong> — Real-time communication with service centers</li>
+  <li> <strong>Review & Rating</strong> — User feedback on service experiences</li>
+  <li> <strong>Map Integration</strong> — Google Maps navigation to garages</li>
+  <li> <strong>Payment Gateway</strong> — In-app payment for services</li>
+  <li> <strong>Service History</strong> — Track past bookings and maintenance records</li>
+  <li> <strong>Advanced Search</strong> — Filter by price, distance, ratings, and availability</li>
+  <li> <strong>Multi-language Support</strong> — Localization for different regions</li>
 </ul>
 
 <hr />
 
-<h2>🐛 Known Issues</h2>
+<h2> Known Issues</h2>
 
 <ul>
   <li>Facebook Login requires proper app review approval for production use</li>
@@ -351,7 +343,7 @@ service cloud.firestore {
 
 <hr />
 
-<h2>🤝 Contributing</h2>
+<h2> Contributing</h2>
 
 <p>Contributions are welcome! Follow these steps to contribute:</p>
 
@@ -382,31 +374,7 @@ git commit -m "Add: description of your feature"</code></pre>
 
 <hr />
 
-<h2>📄 License</h2>
 
-<p>This project is open-source and available under the MIT License. See the <code>LICENSE</code> file for more information.</p>
 
-<hr />
-
-<h2>👨‍💻 Developer</h2>
-
-<p align="center">
-  <strong>Iftikhar Shams Niloy</strong><br/>
-  <a href="https://github.com/Iftikhar-Shams-Niloy">GitHub</a>
-</p>
-
-<hr />
-
-<h2>📞 Support</h2>
-
-<p>For questions, issues, or feature requests:</p>
-<ul>
-  <li>Open an issue on GitHub</li>
-  <li>Contact via email: [Your Email]</li>
-  <li>Connect on LinkedIn: [Your LinkedIn]</li>
-</ul>
-
-<hr />
-
-<h3 align="center">Thank you for exploring <strong>Flutter Auto Service App</strong>! 🚗</h3>
+<h3 align="center">Thank you for exploring <strong>Flutter Auto Service App</strong>! </h3>
 <p align="center">Feel free to star ⭐ the repository if you find it helpful and contribute to make it even better!</p>
